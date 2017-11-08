@@ -1,20 +1,22 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
 
-int main(void) {
-
-int inicio = 0;
+int main(){
+	
+	int inicio = 0;
 	int medio;
 	int final = 5;
 	int s[5] = { 3, 5, 7, 9, 10 };
-	int busqueda = 10;
+	int busqueda;
+	
+	printf("Ingresa el numero a buscar. \n"); 
+	scanf("%d", &busqueda);
+	
 	medio = (inicio + final) / 2;
-
+	
 	while (inicio <= final) {
 		medio = (inicio + final) / 2;
 		if (busqueda == s[medio]) {
-			printf("El elemento esta en la posicion: %d \n", medio + 1);
+			printf("dato %d encontrado posicion %d",busqueda, medio + 1);
 			break;
 		} else if (s[medio] > busqueda) {
 			final = medio - 1;
@@ -22,6 +24,6 @@ int inicio = 0;
 			inicio = medio + 1;
 		}
 	}
-
-		return EXIT_SUCCESS;
+	
+	return 0;
 }
